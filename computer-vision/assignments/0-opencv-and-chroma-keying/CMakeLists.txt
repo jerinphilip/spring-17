@@ -30,6 +30,9 @@ target_link_libraries(img2vid ${OpenCV_LIBS})
 
 add_executable(ccapture ${PROJECT_SOURCE_DIR}/src/camera_capture_gui.cpp)
 target_link_libraries(ccapture ${OpenCV_LIBS})
+
+add_executable(chroma_key ${PROJECT_SOURCE_DIR}/src/chroma_keying.cpp)
+target_link_libraries(chroma_key ${OpenCV_LIBS})
 #add_executable(main ${PROJECT_SOURCE_DIR}/src/main.cpp)
 #add_library(imgproc ${PROJECT_SOURCE_DIR}/src/imgproc.cpp ${PROJECT_SOURCE_DIR}/src/utils.cpp)
 #add_library(recognize ${PROJECT_SOURCE_DIR}/src/recognize.cpp)
