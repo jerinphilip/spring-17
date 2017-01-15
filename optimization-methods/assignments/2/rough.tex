@@ -1,0 +1,123 @@
+\documentclass{article}
+\usepackage{amssymb,amsmath,hyperref,palatino}
+\begin{document}	
+	\section{Basic Definition}
+	Convexity is defined as for every point $x \in [a,b]$, $f(x)$ lies below the secant through $(a, f(a))$ and $(b, f(b))$.  
+	Mathematically, this can be written as:
+	\begin{equation}\label{eq:basic_definition}
+		f((1-\lambda)a + \lambda b) \leq (1-\lambda)f(a) + \lambda f(b), \forall \lambda \in [0,1]
+	\end{equation}
+	
+	\section{Alternate Definition}
+	For continuous and differentiable functions, we can formulate the definition in another way. If the tangent to the function $f$ at a point $x$  lies below the function $\forall x$ in domain, then the function is convex. 
+	
+	Let $z$ be the point where tangent is computed. $(z, f(z))$ lies on the tangent. The slope of the tangent is given by $f'(z)$. The equation for the tangent using point-slope form can be computed to be:
+	\begin{equation}
+		y = f'(z) (x - z) + f(z)
+	\end{equation}
+	
+	Now all $f(x)$ should lie below this $y$. This can be written as
+	\begin{equation*}
+	  f(x) \leq f'(z) (x - z) + f(z)
+	\end{equation*}
+	
+	or
+	
+	\begin{equation}\label{eq:single_derivative}
+	  f(x) - f(z) \leq f'(z) (x - z) 
+	\end{equation}
+	
+	To prove \eqref{eq:basic_definition} and \eqref{eq:single_derivative}, we proceed as follows:
+	
+	$<$proof left$>$
+	\section{Alternate definition}
+	Let f be a twice continuously differentiable real-valued function. Then f is convex \emph{iff} its second derivative $f"$ is non-negative throughout it's domain.
+	Again, in mathematical terms:
+	\begin{equation*}
+		\eqref{eq:basic_definition} \iff f''(x) \geq 0 
+	\end{equation*}
+	
+	To prove this, we have to prove both ways.
+	\subsection{Right Implication}
+	\begin{equation*}
+		\eqref{eq:basic_definition} \implies f''(x) \geq 0 
+	\end{equation*}
+	
+	\subsubsection{Proof}
+	We proceed to prove the contrapositive instead. ie,
+	\begin{equation*}
+		\eqref{eq:basic_definition} \implies f''(x) \geq 0 
+	\end{equation*}
+	
+	\subsection{Left implication}	
+	\begin{equation*}
+		f''(x) \geq 0  \implies \eqref{eq:basic_definition}
+	\end{equation*}
+	\subsubsection{Proof}
+	Let $f''(x) \geq 0$, $\forall x \in \mathbb{R}$. 
+	
+	Consider $x < y, x, y \in \mathbb{R}$, $0 < \lambda < 1$ and $z = (1-\lambda)x + \lambda y$.
+	
+	\begin{align*}
+		f(z) - f(x) &= \int_{x}^{z}{f'(t)dt} &\leq f'(z)(z - x)\\	
+		f(y) - f(z) &= \int_{z}^{y}{f'(t)dt} &\geq f'(z)(y - z)
+	\end{align*}
+	
+	But $z - x = \lambda (y-x)$ and $y-z = (1-\lambda)(y - x)$ from the definition of $z$. Substituting these in the above two equations, we obtain:
+\begin{align*}
+	f(z) &\leq f(x) + \lambda f'(z) (y-x)\\
+	f(z) &\leq f(y) - (1-\lambda) f'(z) (y-x)
+\end{align*}
+
+Multiplying the two inequalities by $(1-\lambda)$ and $\lambda$ respectively and adding together, since both the multiplicands are non-negative, we obtain:
+   \begin{align*}
+   		(1-\lambda)f(z) + \lambda f(z) &\leq (1-\lambda)f(x) + \lambda f(y) \\
+   		f(z) &\leq (1-\lambda)f(x) + \lambda f(y) 
+   \end{align*}
+   
+\pagebreak34   
+\section{OM Question}
+Given $f:\mathbb{R}\rightarrow\mathbb{R}$ which is continuous and double differentiable, and also the result:
+\begin{equation}\label{eq:midpoint}
+	f(\frac{x_1  + x_2}{2}) \leq \frac{f(x_1) + f(x_2)}{2} \implies f\text{ is convex}
+\end{equation}
+
+We're asked to prove
+\begin{equation} 
+	f''(x) > 0 \implies f\text{ is convex}.
+\end{equation}
+
+We have if $f''(x) > 0$, $f'(x)$ is an increasing function. For points $x_1 < x_2, x_1, x_2 \in \mathbb{R}$, consider the following function:
+
+\begin{equation}
+	g(t) = f'(t + (x_2-x_1)/2) - f'(t)
+\end{equation}
+
+Since, $f'(x)$ is increasing, $g$ should be positive under the imposed conditions.
+
+\begin{align*}
+	g(t) & > 0\\
+	f'\left(t + \frac{(x_2-x_1)}{2}\right) - f'(t) & > 0
+\end{align*}
+
+For an infinitesimal positive length element $dt$, and $x_3 = \left(\frac{x_1+x_2}{2}\right)$ we can assert the following:
+
+\begin{align*}
+\left(f'\left(t + \frac{(x_2-x_1)}{2}\right) - f'(t)\right)dt &> 0 \\
+\int_{x_1}^{x_3}{\left(f'\left(t + \frac{(x_2-x_1)}{2}\right) - f'(t)\right)dt} &> 0 \\
+\left[f\left(t + \frac{(x_2-x_1)}{2}\right) - f(t)\right]_{t=x_1}^{t=x_3} &> 0\\
+f\left(x_3 + \frac{(x_2-x_1)}{2}\right) - f(x_3) - \left(f\left(x_1 + \frac{(x_2-x_1)}{2}\right) - f(x_1)\right) &> 0\\
+f\left(x_2\right) - f(x_3) - \left(f\left(x_3\right) - f(x_1)\right) &> 0
+\end{align*}
+
+With some algebra, we obtain
+\begin{equation}\label{eq:from_proof_midpoint}
+	f(x_3) < \frac{f(x_1) + f(x_2)}{2}
+\end{equation}
+
+From \eqref{eq:midpoint} and \eqref{eq:from_proof_midpoint}:
+\begin{equation}
+		f''(x) > 0 \implies f\text{ is convex}.
+\end{equation} 
+ 
+\end{document}
