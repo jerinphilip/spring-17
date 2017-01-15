@@ -1,0 +1,34 @@
+\documentclass{report}
+\usepackage{palatino}
+\author{Jerin Philip}
+\title{Computer Vision: Assignment 1}
+\date{201401071}
+\begin{document}
+\maketitle
+
+\section{Question 1}
+The file \emph{image\_video.cpp} and \emph{video\_image.cpp}
+contains the code to convert from former to latter. 
+
+Experiments were done on \emph{sample-files/big\_buck\_bunny\_480p\_1mb.mp4} and the
+outputs were stored in a folder.
+
+For combining images, the output images from the previous executables
+were used. The frame rate is supplied as an argument to the function,
+and is customizable.
+
+\section{Question 2}
+The file \emph{camera\_capture\_gui.cpp} contains the code to capture
+from a device and save the frames to a directory. The laptop camera
+device, available at $0$ was used for this particular program. 
+
+\section{Question 3}
+Chroma Keying was done in the HSV color space. It was observed that
+values very close to 60 were common in the green screen to be edited and
+the threshold was manually set to match those parameters.
+
+The code is in the file \emph{chroma\_keying.cpp}.
+
+The required videos are in \emph{sample-files} again. The green\_cut.mp4 and boat.mp4 files were used this time.
+
+\end{document}
