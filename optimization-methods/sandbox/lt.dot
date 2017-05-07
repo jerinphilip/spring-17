@@ -1,0 +1,23 @@
+digraph{
+0 -> 1;
+0 -> 2;
+2 -> 3;
+2 -> 4;
+4 -> 5;
+4 -> 8;
+5 -> 6;
+5 -> 7;
+8 -> 9;
+8 -> 10;
+0 [label="(0, 0, 0, 0)\ninfeasible, possible \n\n0.000 >= 0.000, True\n0.000 >= 2.000, False\n"]
+1 [label="(0, 0, 1, 0)\nfeasible, impossible \n1\n6.000 >= 0.000, True\n3.000 >= 2.000, True\n"]
+2 [label="(0, 0, 0, 0)\ninfeasible, possible \n\n0.000 >= 0.000, True\n0.000 >= 2.000, False\n"]
+3 [label="(1, 0, 0, 0)\ninfeasible, impossible \n\n-1.000 >= 0.000, False\n-1.000 >= 2.000, False\n"]
+4 [label="(0, 0, 0, 0)\ninfeasible, possible \n\n0.000 >= 0.000, True\n0.000 >= 2.000, False\n"]
+5 [label="(0, 1, 0, 0)\ninfeasible, possible \n\n2.000 >= 0.000, True\n0.000 >= 2.000, False\n"]
+6 [label="(0, 1, 0, 1)\nfeasible, impossible \n24\n0.000 >= 0.000, True\n2.000 >= 2.000, True\n"]
+7 [label="(0, 1, 0, 0)\ninfeasible, impossible \n\n2.000 >= 0.000, True\n0.000 >= 2.000, False\n"]
+8 [label="(0, 0, 0, 0)\ninfeasible, possible \n\n0.000 >= 0.000, True\n0.000 >= 2.000, False\n"]
+9 [label="(0, 0, 0, 1)\ninfeasible, impossible \n\n-2.000 >= 0.000, False\n2.000 >= 2.000, True\n"]
+10 [label="(0, 0, 0, 0)\ninfeasible, impossible \n\n0.000 >= 0.000, True\n0.000 >= 2.000, False\n"]
+}
