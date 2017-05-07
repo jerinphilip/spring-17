@@ -1,5 +1,8 @@
 PROJECT='main'
 
+pdf: 
+	pdflatex $(PROJECT)
+
 all: bib latex
 	pdflatex $(PROJECT)
 

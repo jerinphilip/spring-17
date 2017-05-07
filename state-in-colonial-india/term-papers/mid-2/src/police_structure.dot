@@ -1,0 +1,50 @@
+
+digraph G {
+    graph [fontname="PT Serif"];
+    graph [fontname="PT Serif"];
+    graph [fontname="PT Serif"];
+    commissioner -> district_sup;
+    subgraph cluster_district {
+        label = "District Police";
+        
+        labelloc = "bottom";
+        subgraph cluster_station {
+            label = "Police Station";
+            labelloc = "bottom";
+            head_constable -> constable [ltail=cluster_staff];
+            head_constable -> sergeant [ltail=cluster_staff];
+        }
+
+        subgraph cluster_staff {
+            constable;
+            sergeant;
+        }
+
+        inspector -> head_constable [ltail=cluster_station];
+        district_sup -> inspector;
+    }
+    dm -> district_sup;
+    
+    subgraph cluster_people {
+        label = "Village Police";
+        labelloc = "bottom";
+        headman -> watchmen;
+        zamindar -> agents;
+    }
+
+    dm -> headman [style=dashed];
+    dm -> zamindar [style=dashed];
+
+    dm [label="District Magistrate/\nCollector"];
+    headman [label = "Village \nHeadman"];
+    watchmen [label = "Village\n Watchman"];
+    district_sup [label = "District\n Superindentant"];
+    inspector [label = "Inspector"];
+    constable [label = "Constable"];
+    head_constable [label = "Head\n Constable"];
+    sergeant [label = "Sergeant"];
+    zamindar [label="Zamindar"];
+    agents [label="Revenue\ncollection\n Agents"];
+    commissioner [label="Commissioner"];
+    
+}
